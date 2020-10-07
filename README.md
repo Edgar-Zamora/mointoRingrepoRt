@@ -1,5 +1,5 @@
-mointeRing repoRt 0.0.0.9000 <img src="man/hex.png" align="right" style="width:150px;height:150x;">
-===================================================================================================
+mointeRing repoRt 0.0.0.9000 <img src="man/hex.png" align="right" style="width:50px;height:50x;">
+=================================================================================================
 
 [Edgar Zamora \| Twitter:
 `@Edgar_Zamora_`](https://twitter.com/Edgar_Zamora_)
