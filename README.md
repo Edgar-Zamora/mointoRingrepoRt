@@ -1,5 +1,5 @@
-mointeRing repoRt 0.0.0.9000 <img src="man/hex.png" align="right" style="width:10px;height:10x;"/>
-==================================================================================================
+mointeRing repoRt 0.0.0.9000 <img src="man/hex.png" align="right" style="width:20px;height:20px;"/>
+===================================================================================================
 
 [Edgar Zamora \| Twitter:
 `@Edgar_Zamora_`](https://twitter.com/Edgar_Zamora_)
@@ -16,5 +16,7 @@ To install the `mointoRingrepoRt` package run the following code:
 devtools::install_github("Edgar-Zamora/mointoRingrepoRt")
 ```
 
-SAI Points
-==========
+Student Retention
+=================
+
+The following set of functions
