@@ -29,7 +29,7 @@ By using the `bbcc_theme()` function while building a graphic will
 modify non-data components of the data plot. It is recommended that this
 function be used every time a graphic is created as to have consistency
 between graphs. All of the modifiable parts of a graphic, the
-`bbcc_theme()` only focusess ona few including text, grid, legend, and
+`bbcc_theme()` only focuses on a few including text, grid, legend, and
 strip elements.
 
 Below is a plot that uses is the default theme.
@@ -41,11 +41,15 @@ plot <- mtcars %>%
   labs(
     title = "Mpg v. Cyl"
   )
+
+plot
 ```
 
+<img src="README_files/figure-markdown_github/bbcc_theme_1-1.png" style="display: block; margin: auto;" />
+
 As you can see above the theme may not be exactly what we would be
-looking for. Instead of changing ever plot we have indidivudally we can
-just call the `bbcc_theme()` function.
+looking for. Instead of changing every plot individually, we can just
+call the `bbcc_theme()` function.
 
 ``` r
 plot +
@@ -54,6 +58,8 @@ plot +
     plot.title = element_text(size = 25)
   )
 ```
+
+<img src="README_files/figure-markdown_github/bbcc_theme_2-1.png" style="display: block; margin: auto;" />
 
 As you can see, using the `theme_bbcc()` function changes the plot
 without needing to individually specify each element. This will avoid
@@ -64,3 +70,33 @@ plot.
 
 `bbcc_cols()`
 -------------
+
+In addition to adding a function to change plot themes, we include the
+`bbcc_cols()` function to access the official hex colors of Big Bend.
+Currently there are two colors, *green* and *dark blue*, with the
+possibility of adding others. To view all the currently available colors
+you can run the function without any arguments.
+
+``` r
+bbcc_cols()
+```
+
+    ##     green dark blue 
+    ## "#30763a" "#132048"
+
+Helping with uniformity, the colors can also be assigned to different
+`geoms_` in a plot. Currently it is only possible to assign color as a
+constant value and can not be made an aesthetic. Below is an example of
+this.
+
+``` r
+mtcars %>% 
+  ggplot(aes(mpg, cyl)) +
+  geom_point(color = bbcc_cols("green")) +
+  labs(title = "Mpg v. Cyl")
+```
+
+<img src="README_files/figure-markdown_github/bbcc_cols_plot-1.png" style="display: block; margin: auto;" />
+
+As you can see, it is necessary to specificy which calor you would like
+included as an argument within the function.

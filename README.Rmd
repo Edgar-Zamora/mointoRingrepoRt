@@ -4,11 +4,12 @@ output:
     variant: markdown_github
 ---
 
-```{r setup, include=FALSE, message=FALSE, warning=FALSE, results='hide'}
+```{r setup, include=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(devtools)
+library(monitoRingrepoRt)
 
-knitr::opts_chunk$set(warning = FALSE, message = FALSE, results = FALSE, eval = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = TRUE, fig.align = 'center')
 
 ```
 
@@ -20,7 +21,7 @@ The `mointoRingrepoRt` package is a collection of functions that will aid in the
 
 To install the `mointoRingrepoRt` package run the following code:
 
-```{r installation}
+```{r installation, eval=FALSE}
 devtools::install_github("Edgar-Zamora/mointoRingrepoRt")
 ```
 
@@ -30,7 +31,7 @@ To provide uniform branding throughout the Mission Fulfillment Report, there are
 
 ## `bbcc_theme()`
 
-By using the `bbcc_theme()` function while building a graphic will modify non-data components of the data plot. It is recommended that this function be used every time a graphic is created as to have consistency between graphs. All of the modifiable parts of a graphic, the `bbcc_theme()` only focusess ona few including text, grid, legend, and strip elements.
+By using the `bbcc_theme()` function while building a graphic will modify non-data components of the data plot. It is recommended that this function be used every time a graphic is created as to have consistency between graphs. All of the modifiable parts of a graphic, the `bbcc_theme()` only focuses on a few including text, grid, legend, and strip elements.
 
 Below is a plot that uses is the default theme.
 
@@ -42,9 +43,11 @@ plot <- mtcars %>%
     title = "Mpg v. Cyl"
   )
 
+plot
+
 ```
 
-As you can see above the theme may not be exactly what we would be looking for. Instead of changing ever plot we have indidivudally we can just call the `bbcc_theme()` function. 
+As you can see above the theme may not be exactly what we would be looking for. Instead of changing every plot individually, we can just call the `bbcc_theme()` function. 
 
 ```{r bbcc_theme_2}
 plot +
@@ -59,7 +62,26 @@ As you can see, using the `theme_bbcc()` function changes the plot without needi
 
 ## `bbcc_cols()`
 
+In addition to adding a function to change plot themes, we include the `bbcc_cols()` function to access the official hex colors of Big Bend. Currently there are two colors, *green* and *dark blue*, with the possibility of adding others. To view all the currently available colors you can run the function without any arguments.
 
+```{r bbcc_cols}
+
+bbcc_cols()
+
+```
+
+Helping with uniformity, the colors can also be assigned to different `geoms_` in a plot. Currently it is only possible to assign color as a constant value and can not be made an aesthetic. Below  is an example of this.
+
+```{r bbcc_cols_plot}
+
+mtcars %>% 
+  ggplot(aes(mpg, cyl)) +
+  geom_point(color = bbcc_cols("green")) +
+  labs(title = "Mpg v. Cyl")
+
+```
+
+As you can see, it is necessary to specificy which calor you would like included as an argument within the function.
 
 
 
