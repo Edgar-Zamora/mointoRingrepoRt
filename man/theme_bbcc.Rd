@@ -2,10 +2,36 @@
 % Please edit documentation in R/theme_bbcc.R
 \name{theme_bbcc}
 \alias{theme_bbcc}
+<<<<<<< HEAD
 \title{BBCC Theme}
 \usage{
 theme_bbcc()
 }
 \description{
 A theme that will customize graphics according standards.
+=======
+\title{Generate custom theme settings for the Mission Fulfillment Report}
+\usage{
+theme_bbcc()
+}
+\value{
+Thematic settings for ggplot object
+}
+\description{
+Generate custom theme settings for the Mission Fulfillment Report
+}
+\examples{
+
+mtcars \%>\%
+   ggplot(aes(mpg, cyl)) +
+   geom_point() +
+   labs(
+        title = "Some title") +
+   theme_bbcc() +
+   theme(
+        plot.title = element_text(size = 16)
+        )
+
+
+>>>>>>> cb257be9815d6fa6e7b9143b18f109f518e15485
 }
