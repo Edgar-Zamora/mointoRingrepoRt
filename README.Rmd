@@ -10,7 +10,7 @@ library(monitoRingrepoRt)
 knitr::opts_chunk$set(warning = FALSE, message = FALSE, results = FALSE, eval = FALSE)
 ```
 
-# mointeRing repoRt 0.0.0.9000 <img src="man/hex.png" align="right" style="width:20px;height:20px;"/>
+# mointeRing repoRt 0.0.0.9000
 
 [Edgar Zamora \| Twitter: `@Edgar_Zamora_`](https://twitter.com/Edgar_Zamora_)
 
