@@ -16,6 +16,18 @@ To install the `mointoRingrepoRt` package run the following code:
 devtools::install_github("Edgar-Zamora/mointoRingrepoRt")
 ```
 
+Student Success
+===============
+
+The student success section of the mission fulfillment covers things
+like Full-time Equivalent Enrollment (FTE), Student Achievement
+Initiative (SAI) points, and many other aspects. To help with some of
+these aspects, we create some functions that can retrieve and plot the
+desired data.
+
+Total student FTE (Full‐timeEquivalent)
+---------------------------------------
+
 BBCC Branding
 =============
 
