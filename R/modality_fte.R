@@ -2,7 +2,6 @@
 #'
 #' @description Get a dataframe of fte for each modality since the start.
 #'
-#' @return
 #' @export
 #'
 #' @examples
@@ -10,13 +9,13 @@
 #'  modality_fte() %>%
 #'    filter(year_long == "2018-19")
 #'
+
 modality_fte <- function() {
 
-  tbl(con, "CLASS") %>%
+  modality_fte_tbl <- tbl(con, "CLASS") %>%
   collect() %>%
   clean_names() %>%
   select(year, ftes_total, dist_ed) %>%
-  #count(dist_ed)
   mutate(modality = case_when(is.na(dist_ed) | dist_ed %in% c("40", "7A") ~ "Face-to-Face",
                               dist_ed == "9E" ~ "Web Enhanced",
                               dist_ed == "8H" ~ "Hybrid",
@@ -31,4 +30,7 @@ modality_fte <- function() {
               clean_names() %>%
               select(yr, year_long), by = c("year" = "yr")) %>%
   distinct_all()
+
+  return(modality_fte)
+
 }

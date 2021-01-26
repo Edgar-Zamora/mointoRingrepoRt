@@ -25,8 +25,17 @@ Initiative (SAI) points, and many other aspects. To help with some of
 these aspects, we create some functions that can retrieve and plot the
 desired data.
 
-Total student FTE (Full‐timeEquivalent)
----------------------------------------
+Total student FTE (Full‐time Equivalent)
+----------------------------------------
+
+To retrieve the information regarding total student FTE, use the
+`program_area_fte()` function. When you run the function a dataframe
+will be returned containing a summarized count of FTE by area for each
+academic year available.
+
+``` r
+program_area_ftes()
+```
 
 BBCC Branding
 =============
@@ -110,5 +119,5 @@ mtcars %>%
 
 <img src="README_files/figure-markdown_github/bbcc_cols_plot-1.png" style="display: block; margin: auto;" />
 
-As you can see, it is necessary to specificy which calor you would like
+As you can see, it is necessary to specify which colour you would like
 included as an argument within the function.
