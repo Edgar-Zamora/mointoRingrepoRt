@@ -16,25 +16,25 @@ To install the `mointoRingrepoRt` package run the following code:
 devtools::install_github("Edgar-Zamora/mointoRingrepoRt")
 ```
 
-Student Succcess
-================
+Student Success
+===============
 
-Total Student FTE (Full-time Equivalent)
+The student success section of the mission fulfillment covers things
+like Full-time Equivalent Enrollment (FTE), Student Achievement
+Initiative (SAI) points, and many other aspects. To help with some of
+these aspects, we create some functions that can retrieve and plot the
+desired data.
+
+Total student FTE (Full‐time Equivalent)
 ----------------------------------------
 
-The `program_area()` is a function that will return the FTE counts for
-each program area at Big Bend. The only argument that is present within
-the function is `last_yr` which asks that you include the latest
-complete year of data in the data warehouse. Doing so is necessary
-because if not than the graphic and table will reflect quarterly data
-instead of annual data.
-
-By setting the `last_yr` argument to `"B90"` I am telling the function
-to return data regarding program FTE’s starting in “B23” to “B90”. The
-lower limit of “B23” is automatically defined and will not change.
+To retrieve the information regarding total student FTE, use the
+`program_area_fte()` function. When you run the function a dataframe
+will be returned containing a summarized count of FTE by area for each
+academic year available.
 
 ``` r
-program_area_fte(last_yr = "B90")
+program_area_ftes()
 ```
 
 Enrollment by modality

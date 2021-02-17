@@ -6,6 +6,7 @@
 \usage{
 theme_bbcc()
 }
+<<<<<<< HEAD
 \value{
 Thematic settings for ggplot object
 }
@@ -25,4 +26,8 @@ mtcars \%>\%
         )
 
 
+=======
+\description{
+A theme that will customize graphics according standards.
+>>>>>>> 53f0d1347ec3751a96cc4109a042091d2c2fcc8c
 }

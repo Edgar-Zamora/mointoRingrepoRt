@@ -4,7 +4,11 @@
 \alias{program_area_ftes}
 \title{FTE by Program Area}
 \usage{
+<<<<<<< HEAD
 program_area_ftes(last_yr)
+=======
+program_area_ftes()
+>>>>>>> 53f0d1347ec3751a96cc4109a042091d2c2fcc8c
 }
 \description{
 Function will return a dataframe containing the FTE for each academic year broken out by program area.

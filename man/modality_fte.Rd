@@ -4,15 +4,25 @@
 \alias{modality_fte}
 \title{Modality Enrollment}
 \usage{
+<<<<<<< HEAD
 modality_fte(last_yr)
 }
 \description{
 Get a dataframe of fte for each modality since the start of record.
+=======
+modality_fte()
+}
+\description{
+Get a dataframe of fte for each modality since the start.
+>>>>>>> 53f0d1347ec3751a96cc4109a042091d2c2fcc8c
 }
 \examples{
 
  modality_fte() \%>\%
    filter(year_long == "2018-19")
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 53f0d1347ec3751a96cc4109a042091d2c2fcc8c
 }

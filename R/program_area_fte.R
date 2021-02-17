@@ -2,7 +2,6 @@
 #'
 #' @description Function will return a dataframe containing the FTE for each academic year broken out by program area.
 #'
-#' @return
 #' @export
 #'
 #' @examples
@@ -13,7 +12,7 @@
 
 program_area_ftes <- function(last_yr) {
 
-  tbl(con, "CLASS") %>%
+  program_area_ftes <- tbl(con, "CLASS") %>%
     collect() %>%
     clean_names() %>%
     filter(year >= "B23",
@@ -33,7 +32,16 @@ program_area_ftes <- function(last_yr) {
     summarise(
       ftes_count = round(sum(ftes_total)/3, 1)
     ) %>%
+<<<<<<< HEAD
     left_join(tbl(con, "YRQ LU") %>% collect() %>% clean_names() %>% select(yr, year_long), by = c("year" = "yr")) %>%
+=======
+    left_join(tbl(con, "YRQ LU") %>%
+                collect() %>%
+                clean_names() %>%
+              elect(yr, year_long), by = c("year" = "yr")) %>%
+>>>>>>> 53f0d1347ec3751a96cc4109a042091d2c2fcc8c
     distinct_all()
+
+  return(program_area_ftes)
 
 }
