@@ -2,15 +2,7 @@
 % Please edit documentation in R/theme_bbcc.R
 \name{theme_bbcc}
 \alias{theme_bbcc}
-<<<<<<< HEAD
 \title{BBCC Theme}
-\usage{
-theme_bbcc()
-}
-\description{
-A theme that will customize graphics according standards.
-=======
-\title{Generate custom theme settings for the Mission Fulfillment Report}
 \usage{
 theme_bbcc()
 }
@@ -18,7 +10,7 @@ theme_bbcc()
 Thematic settings for ggplot object
 }
 \description{
-Generate custom theme settings for the Mission Fulfillment Report
+A theme that will customize graphics according standards.
 }
 \examples{
 
@@ -33,5 +25,4 @@ mtcars \%>\%
         )
 
 
->>>>>>> cb257be9815d6fa6e7b9143b18f109f518e15485
 }

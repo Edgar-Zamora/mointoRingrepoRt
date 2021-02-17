@@ -16,87 +16,38 @@ To install the `mointoRingrepoRt` package run the following code:
 devtools::install_github("Edgar-Zamora/mointoRingrepoRt")
 ```
 
-BBCC Branding
-=============
+Student Succcess
+================
 
-To provide uniform branding throughout the Mission Fulfillment Report,
-there are two functions that can be used.
+Total Student FTE (Full-time Equivalent)
+----------------------------------------
 
-`bbcc_theme()`
---------------
+The `program_area()` is a function that will return the FTE counts for
+each program area at Big Bend. The only argument that is present within
+the function is `last_yr` which asks that you include the latest
+complete year of data in the data warehouse. Doing so is necessary
+because if not than the graphic and table will reflect quarterly data
+instead of annual data.
 
-By using the `bbcc_theme()` function while building a graphic will
-modify non-data components of the data plot. It is recommended that this
-function be used every time a graphic is created as to have consistency
-between graphs. All of the modifiable parts of a graphic, the
-`bbcc_theme()` only focuses on a few including text, grid, legend, and
-strip elements.
-
-Below is a plot that uses is the default theme.
-
-``` r
-plot <- mtcars %>%
-  ggplot(aes(mpg, cyl)) +
-  geom_point() +
-  labs(
-    title = "Mpg v. Cyl"
-  )
-
-plot
-```
-
-<img src="README_files/figure-markdown_github/bbcc_theme_1-1.png" style="display: block; margin: auto;" />
-
-As you can see above the theme may not be exactly what we would be
-looking for. Instead of changing every plot individually, we can just
-call the `bbcc_theme()` function.
+By setting the `last_yr` argument to `"B90"` I am telling the function
+to return data regarding program FTE’s starting in “B23” to “B90”. The
+lower limit of “B23” is automatically defined and will not change.
 
 ``` r
-plot +
-  theme_bbcc() +
-  theme(
-    plot.title = element_text(size = 25)
-  )
+program_area_fte(last_yr = "B90")
 ```
 
-<img src="README_files/figure-markdown_github/bbcc_theme_2-1.png" style="display: block; margin: auto;" />
+Enrollment by modality
+----------------------
 
-As you can see, using the `theme_bbcc()` function changes the plot
-without needing to individually specify each element. This will avoid
-the potential to forget something if all the plots that are bound to be
-included. Using the bbcc theme also does not repress the ability to use
-the regular theme component for those elements that are particular to a
-plot.
-
-`bbcc_cols()`
--------------
-
-In addition to adding a function to change plot themes, we include the
-`bbcc_cols()` function to access the official hex colors of Big Bend.
-Currently there are two colors, *green* and *dark blue*, with the
-possibility of adding others. To view all the currently available colors
-you can run the function without any arguments.
+The `modeality_fte()` function will return a dataframe containing the
+FTE for each modality of a class. The classification of what constitutes
+certain modalities is defined within the R function. The only argument
+that needs defining is the `last_yr` one, which asks that you include
+the latest complete year of data in the data warehouse. Doing so is
+necessary because if not than the graphic and table will reflect
+quarterly data instead of annual data.
 
 ``` r
-bbcc_cols()
+modality_fte(last_yr = "B90")
 ```
-
-    ##     green dark blue 
-    ## "#30763a" "#132048"
-
-Helping with uniformity, the colors can also be assigned to different
-`geoms_` in a plot. Currently it is only possible to assign color as a
-constant value and can not be made an aesthetic. Below is an example of
-this.
-
-``` r
-mtcars %>% 
-  ggplot(aes(mpg, cyl)) +
-  geom_point(color = bbcc_cols("green")) +
-  labs(title = "Mpg v. Cyl")
-```
-
-<img src="README_files/figure-markdown_github/bbcc_cols_plot-1.png" style="display: block; margin: auto;" />
-
-As you can see, it is necessary to specificy which calor you would like
-included as an argument within the function.

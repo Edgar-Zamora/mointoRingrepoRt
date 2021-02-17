@@ -11,12 +11,14 @@
 #'   filter(year >= 'B23')
 #'
 
-program_area_ftes <- function() {
+program_area_ftes <- function(last_yr) {
 
   tbl(con, "CLASS") %>%
     collect() %>%
     clean_names() %>%
-    filter(!dept_div %in% c("BDC", "COM", "CTP", "FIR", "JSP", "JST")) %>%
+    filter(year >= "B23",
+           year <= {{last_yr}},
+           !dept_div %in% c("BDC", "COM", "CTP", "FIR", "JSP", "JST")) %>%
     select(year, ftes_total, dept_div, course_num) %>%
     mutate(program_area = case_when(dept_div == "ENGL" & course_num == "109" ~ "Workforce Education",
                                     dept_div %in% c("MATH", "ENGL") & course_num < 100 ~ "Pre-college Math and English",
@@ -31,10 +33,7 @@ program_area_ftes <- function() {
     summarise(
       ftes_count = round(sum(ftes_total)/3, 1)
     ) %>%
-    left_join(tbl(con, "YRQ LU") %>%
-                collect() %>%
-                clean_names() %>% s
-              elect(yr, year_long), by = c("year" = "yr")) %>%
+    left_join(tbl(con, "YRQ LU") %>% collect() %>% clean_names() %>% select(yr, year_long), by = c("year" = "yr")) %>%
     distinct_all()
 
 }
