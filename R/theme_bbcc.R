@@ -30,21 +30,12 @@
 #'         )
 #'
 #'
-=======
->>>>>>> 53f0d1347ec3751a96cc4109a042091d2c2fcc8c
 
 theme_bbcc <- function(){
 
   font <- "Calibri Light"
 
   theme_minimal( ) %+replace%
-<<<<<<< HEAD
-  theme_minimal() %+replace%
-=======
-
-  theme_minimal() %+replace%
-
->>>>>>> 53f0d1347ec3751a96cc4109a042091d2c2fcc8c
 
     theme(
 
@@ -58,10 +49,7 @@ theme_bbcc <- function(){
 
       #strip elements
       strip.background = element_blank(),
-<<<<<<< HEAD
-=======
 
->>>>>>> 53f0d1347ec3751a96cc4109a042091d2c2fcc8c
       #text elements
       text = element_text(family = font),
       axis.text = element_text(color = "black"),
